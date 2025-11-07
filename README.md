@@ -57,22 +57,18 @@ This project is built using a **Serverless architecture** on **AWS**, designed f
 
 ## Local Setup
 
+
+  **Install the AWS CLI locally based on your operating system.**
   
-
-Install AWS CLI Locally Based On Your Operating System. Refer To This URL
-
 [AWS CLI Installation Link](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
   
+**Configure AWS CLI**
 
-Configure AWS CLI
-
-  
-
+```
 aws configure
-
-  
-
+```
+You’ll be prompted to enter:
 - Input Your AWS Access Key ID
 
 - AWS Secret Access Key
@@ -81,23 +77,16 @@ aws configure
 
 - Default Output Format
 
-  
+This authenticates your local environment with AWS.
 
-Install The Serverless Framework Via NPM
+**Install The Serverless Framework Via NPM**
 
-  
 
-First, you must have the [Node.js runtime](https://nodejs.org/) installed, then you can install the Serverless Framework via NPM.
-
-  
-
-Open your CLI and run the command below to install the Serverless Framework globally.
+Make sure you have Node.js installed, then install Serverless globally:
 
 ```
 npm i serverless -g
 ```
-
-  
 
 ### Clone The Repo
 
@@ -115,35 +104,24 @@ npm i
 
 ### Update The Environment Variables
 
-Refer To The env.example file and create an .env file. Update the .env with your secrets
-
-  
+Refer to the `.env.example` file and create your own `.env` file in the root directory.
 
 ### Local development ( Needs AWS Account Though )
 
-  
-
-The easiest way to develop and test your function is to use the `dev` command:
-
-  
-
+You can run and test your Lambda function locally using the Serverless Dev Mode:
 ```
 serverless dev
 ```
+  This:
 
-  
+-   Starts a  **local emulator**  for AWS Lambda
+    
+-   Tunnels requests to/from AWS so you can interact with your deployed stack
+    
+-   Lets you develop and debug locally without redeploying every time
 
-This will start a local emulator of AWS Lambda and tunnel your requests to and from AWS Lambda, allowing you to interact with your function as if it were running in the cloud.
-
-  
-
-Now you can invoke the function as before, but this time the function will be executed locally. Now you can develop your function locally, invoke it, and see the results immediately without having to re-deploy.
-
-  
-
+ 
 ### Postman Collections
-
-  
 
 Use The Postman Collections JSON File Present In ./postman folder and Import It Locally On Postman application.
 
