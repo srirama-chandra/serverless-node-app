@@ -58,12 +58,12 @@ This project is built using a **Serverless architecture** on **AWS**, designed f
 ## Local Setup
 
 
-  **Install the AWS CLI locally based on your operating system.**
+### Install the AWS CLI locally based on your operating system
   
 [AWS CLI Installation Link](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
   
-**Configure AWS CLI**
+### Configure AWS CLI
 
 ```
 aws configure
@@ -79,7 +79,7 @@ You’ll be prompted to enter:
 
 This authenticates your local environment with AWS.
 
-**Install The Serverless Framework Via NPM**
+### Install The Serverless Framework Via NPM
 
 
 Make sure you have Node.js installed, then install Serverless globally:
