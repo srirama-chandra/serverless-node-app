@@ -1,0 +1,98 @@
+org: isriramachandra
+app: serverless-node-app
+service: serverless-node-app
+
+stages:
+  default:
+    params:
+      usersTableName: "users-${sls:stage}"
+      notesTableName: "notes-${sls:stage}"
+      notesMetaTableName: "notes-meta-${sls:stage}"
+
+plugins:
+  - serverless-dotenv-plugin
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-south-1
+
+  logs:
+    httpApi: true
+
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+            - dynamodb:BatchGetItem
+          Resource:
+            - Fn::GetAtt: [UsersTable, Arn]
+            - Fn::GetAtt: [NotesTable, Arn]
+            - Fn::GetAtt: [NotesMetaTable, Arn]
+        - Effect: Allow
+          Action:
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+          Resource: arn:aws:logs:*:*:*
+
+  environment:
+    USERS_TABLE: ${param:usersTableName}
+    NOTES_TABLE: ${param:notesTableName}
+    NOTES_META_TABLE: ${param:notesMetaTableName}
+    JWT_SECRET: ${env:JWT_SECRET}
+
+functions:
+  api:
+    handler: handler.handler
+    events:
+      - httpApi: "*"
+
+resources:
+  Resources:
+    UsersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${param:usersTableName}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: username
+            AttributeType: S
+        KeySchema:
+          - AttributeName: username
+            KeyType: HASH
+
+    NotesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${param:notesTableName}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: username
+            AttributeType: S
+          - AttributeName: noteId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: username
+            KeyType: HASH
+          - AttributeName: noteId
+            KeyType: RANGE
+
+    NotesMetaTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${param:notesMetaTableName}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: noteId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: noteId
+            KeyType: HASH
