@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "783f0912-ef86-47f4-9e9c-5ae92a690ede",
+		"name": "Serverless-node-app-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48863788",
+		"_collection_link": "https://srirama-chandra-7291191.postman.co/workspace/Srirama-Chandra's-Workspace~6ec7a518-955a-451c-82b9-220c03d3a383/collection/48863788-783f0912-ef86-47f4-9e9c-5ae92a690ede?action=share&source=collection_link&creator=48863788"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"username\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vzg1wdprx5.execute-api.ap-south-1.amazonaws.com/signup",
+					"protocol": "https",
+					"host": [
+						"vzg1wdprx5",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"username\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vzg1wdprx5.execute-api.ap-south-1.amazonaws.com/signin",
+					"protocol": "https",
+					"host": [
+						"vzg1wdprx5",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createNotes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNzYyNTE4NzQwfQ.BT-j7iLXN-PZPV7HxXuLBxzmrxFs4sCwLGigzliGaVY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"How To Do Deep Work\",\n    \"content\": \"This Note Explains How To Do Deep Work\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vzg1wdprx5.execute-api.ap-south-1.amazonaws.com/notes",
+					"protocol": "https",
+					"host": [
+						"vzg1wdprx5",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNotes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNzYyNTE4NzQwfQ.BT-j7iLXN-PZPV7HxXuLBxzmrxFs4sCwLGigzliGaVY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vzg1wdprx5.execute-api.ap-south-1.amazonaws.com/notes",
+					"protocol": "https",
+					"host": [
+						"vzg1wdprx5",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatenote",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNzYyNTE4NzQwfQ.BT-j7iLXN-PZPV7HxXuLBxzmrxFs4sCwLGigzliGaVY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\": \"updated content\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vzg1wdprx5.execute-api.ap-south-1.amazonaws.com/notes/149f1e52-6630-4928-b008-982b635a4856",
+					"protocol": "https",
+					"host": [
+						"vzg1wdprx5",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"notes",
+						"149f1e52-6630-4928-b008-982b635a4856"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteNote",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNzYyNTE4NzQwfQ.BT-j7iLXN-PZPV7HxXuLBxzmrxFs4sCwLGigzliGaVY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vzg1wdprx5.execute-api.ap-south-1.amazonaws.com/notes/149f1e52-6630-4928-b008-982b635a4856",
+					"protocol": "https",
+					"host": [
+						"vzg1wdprx5",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"notes",
+						"149f1e52-6630-4928-b008-982b635a4856"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
