@@ -22,16 +22,12 @@
 					}
 				},
 				"url": {
-					"raw": "https://vzg1wdprx5.execute-api.ap-south-1.amazonaws.com/signup",
-					"protocol": "https",
+					"raw": "{{baseUrl}}/auth/signup",
 					"host": [
-						"vzg1wdprx5",
-						"execute-api",
-						"ap-south-1",
-						"amazonaws",
-						"com"
+						"{{baseUrl}}"
 					],
 					"path": [
+						"auth",
 						"signup"
 					]
 				}
@@ -53,16 +49,12 @@
 					}
 				},
 				"url": {
-					"raw": "https://vzg1wdprx5.execute-api.ap-south-1.amazonaws.com/signin",
-					"protocol": "https",
+					"raw": "{{baseUrl}}/auth/signin",
 					"host": [
-						"vzg1wdprx5",
-						"execute-api",
-						"ap-south-1",
-						"amazonaws",
-						"com"
+						"{{baseUrl}}"
 					],
 					"path": [
+						"auth",
 						"signin"
 					]
 				}
@@ -73,13 +65,7 @@
 			"name": "createNotes",
 			"request": {
 				"method": "POST",
-				"header": [
-					{
-						"key": "authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNzYyNTE4NzQwfQ.BT-j7iLXN-PZPV7HxXuLBxzmrxFs4sCwLGigzliGaVY",
-						"type": "text"
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n    \"title\": \"How To Do Deep Work\",\n    \"content\": \"This Note Explains How To Do Deep Work\"\n}",
@@ -90,14 +76,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://vzg1wdprx5.execute-api.ap-south-1.amazonaws.com/notes",
-					"protocol": "https",
+					"raw": "{{baseUrl}}/notes",
 					"host": [
-						"vzg1wdprx5",
-						"execute-api",
-						"ap-south-1",
-						"amazonaws",
-						"com"
+						"{{baseUrl}}"
 					],
 					"path": [
 						"notes"
@@ -113,13 +94,7 @@
 			},
 			"request": {
 				"method": "GET",
-				"header": [
-					{
-						"key": "authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNzYyNTE4NzQwfQ.BT-j7iLXN-PZPV7HxXuLBxzmrxFs4sCwLGigzliGaVY",
-						"type": "text"
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
 					"raw": "",
@@ -130,14 +105,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://vzg1wdprx5.execute-api.ap-south-1.amazonaws.com/notes",
-					"protocol": "https",
+					"raw": "{{baseUrl}}/notes",
 					"host": [
-						"vzg1wdprx5",
-						"execute-api",
-						"ap-south-1",
-						"amazonaws",
-						"com"
+						"{{baseUrl}}"
 					],
 					"path": [
 						"notes"
@@ -150,13 +120,7 @@
 			"name": "updatenote",
 			"request": {
 				"method": "PUT",
-				"header": [
-					{
-						"key": "authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNzYyNTE4NzQwfQ.BT-j7iLXN-PZPV7HxXuLBxzmrxFs4sCwLGigzliGaVY",
-						"type": "text"
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n    \"content\": \"updated content\"\n}",
@@ -167,18 +131,13 @@
 					}
 				},
 				"url": {
-					"raw": "https://vzg1wdprx5.execute-api.ap-south-1.amazonaws.com/notes/149f1e52-6630-4928-b008-982b635a4856",
-					"protocol": "https",
+					"raw": "{{baseUrl}}/notes/52b2863f-20aa-48c7-9f0e-aa0024652839",
 					"host": [
-						"vzg1wdprx5",
-						"execute-api",
-						"ap-south-1",
-						"amazonaws",
-						"com"
+						"{{baseUrl}}"
 					],
 					"path": [
 						"notes",
-						"149f1e52-6630-4928-b008-982b635a4856"
+						"52b2863f-20aa-48c7-9f0e-aa0024652839"
 					]
 				}
 			},
@@ -188,13 +147,7 @@
 			"name": "deleteNote",
 			"request": {
 				"method": "DELETE",
-				"header": [
-					{
-						"key": "authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNzYyNTE4NzQwfQ.BT-j7iLXN-PZPV7HxXuLBxzmrxFs4sCwLGigzliGaVY",
-						"type": "text"
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
 					"raw": "",
@@ -205,18 +158,13 @@
 					}
 				},
 				"url": {
-					"raw": "https://vzg1wdprx5.execute-api.ap-south-1.amazonaws.com/notes/149f1e52-6630-4928-b008-982b635a4856",
-					"protocol": "https",
+					"raw": "{{baseUrl}}/notes/25993af7-476b-41c9-b367-76fe42a4d551",
 					"host": [
-						"vzg1wdprx5",
-						"execute-api",
-						"ap-south-1",
-						"amazonaws",
-						"com"
+						"{{baseUrl}}"
 					],
 					"path": [
 						"notes",
-						"149f1e52-6630-4928-b008-982b635a4856"
+						"25993af7-476b-41c9-b367-76fe42a4d551"
 					]
 				}
 			},

@@ -123,15 +123,26 @@ serverless dev
  
 ### Postman Collections
 
-Use The Postman Collections JSON File Present In ./postman folder and Import It Locally On Postman application.
+You can test the API endpoints using the provided Postman setup.
 
-**Or**
+**Steps:**
 
-Directly Access Collection From This URL And Import It In Postman Locally
+1. Download and import both files from the `/postman` folder:
 
-[Postman Collection URL](https://raw.githubusercontent.com/srirama-chandra/serverless-node-app/2e708603eb6ffb7c3bd7193532f0bc18c0614bb1/postman/Serverless-node-app-collection.postman_collection.json)
+-  `serverless-node-app.postman_collection.json`
+
+-  `serverless-node-app.postman_environment.json`
+
+2. In Postman, open the imported environment and update the variable `baseUrl`
+
+3. Select that environment and start testing the API.
 
   
+
+All requests automatically use the `{{baseUrl}}` variable.
+
+Give authorization header for accessing protected routes ( ex: /notes )
+
 
 ### Deployment
 
